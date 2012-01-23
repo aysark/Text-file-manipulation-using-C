@@ -74,7 +74,7 @@ int compare(WordArray *a,WordArray *b)
 
 int main(int argc, char *argv[])
 {
-    char *ptr_filename = "dataset3.txt";
+    char *ptr_filename = "dataset1.txt";
 
 	FILE *ptr_file;
 	char line[1000];
