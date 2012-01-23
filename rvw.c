@@ -21,26 +21,20 @@ int num_allocated = 0; // This is essentially how large the array is
 
 int AddToArray (WordArray word)
 {
-	if(num_elements == num_allocated) { // Are more refs required?
-		
-		// Feel free to change the initial number of refs and the rate at which refs are allocated.
+	// check if we've reached max size of array
+	if(num_elements == num_allocated) {
 		if (num_allocated == 0)
-			num_allocated = 3; // Start off with 3 refs
+			num_allocated = 3;
 		else
-			num_allocated *= 2; // Double the number of refs allocated
-		
-		// Make the reallocation transactional by using a temporary variable first
-		void *_tmp = realloc(dataset, (num_allocated * sizeof(WordArray)));
-		
-		// If the reallocation didn't go so well, inform the user and bail out
-		if (!_tmp)
+			num_allocated *= 2;
+		// reallocate memory
+		void *tmp = realloc(dataset, (num_allocated * sizeof(WordArray)));
+		if (!tmp)
 		{ 
-			fprintf(stderr, "ERROR: Couldn't realloc memory!\n");
-			return(-1); 
+			fprintf(stderr, "Couldn't reallocate memory.\n");
+			return -1; 
 		}
-		
-		// Things are looking good so far, so let's set the 
-		dataset = (WordArray*)_tmp;	
+		dataset = (WordArray*)tmp;	
 	}
 	
 	// Next we need to check if the word is already in the array
@@ -53,6 +47,7 @@ int AddToArray (WordArray word)
 			return num_elements;
 		}
 	}
+	
 	//add the word to the array since we couldn't find it
 	dataset[num_elements] = word; 
 	num_elements++;	
