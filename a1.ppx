@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings version="1.0">
+	<category name="dataset1.txt">
+		<category name="Window">
+			<property name="Left" type="integer">0</property>
+			<property name="Top" type="integer">0</property>
+			<property name="Right" type="integer">662</property>
+			<property name="Bottom" type="integer">273</property>
+			<property name="Maximized" type="integer">0</property>
+			<property name="Active" type="integer">0</property>
+		</category>
+	</category>
+	<category name="rvw.c">
+		<category name="Window">
+			<property name="Left" type="integer">-9</property>
+			<property name="Top" type="integer">-36</property>
+			<property name="Right" type="integer">1169</property>
+			<property name="Bottom" type="integer">480</property>
+			<property name="Maximized" type="integer">1</property>
+			<property name="Active" type="integer">1</property>
+		</category>
+	</category>
+</settings>
